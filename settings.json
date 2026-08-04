@@ -1,183 +1,411 @@
 {
- "vim_mode": false,
- "auto_install_extensions":{
-   "html": true,
-   "toml": true,
-   "dockerfile": true,
-  "docker-compose": true,
-   "material-icon-theme": true,
-   "biome": true,
-   "mcp-server-context7": true,
-   "python-requirements": true,
-   "jinja2": true,
-   "moonlight": true,
-   "git-firefly": true,
-  "just": true,
- },
- "edit_predictions": {
-  "mode": "eager"
- },
- "agent": {
-		"default_profile": "write",
-		"default_model": {
-			"provider": "copilot_chat",
-			"model": "claude-sonnet-4.5"
-		},
-		"model_parameters": []
-	},
-	"telemetry": {
-		"diagnostics": false,
-		"metrics": false
-	},
-	"features": {
-		"edit_prediction_provider": "copilot"
-	},
-	"buffer_font_family": "JetBrains Mono",
-	"icon_theme": {
-		"mode": "dark",
-		"light": "Zed (Default)",
-		"dark": "Material Icon Theme"
-	},
-	"cursor_shape": "block",
-	"ui_font_size": 16,
-	"buffer_font_size": 15,
-	"project_panel": { "auto_fold_dirs": false },
-	"theme": {
-		"mode": "dark",
-		"light": "Ayu Light",
-		"dark": "Moonlight Italic"
-	},
-	"profiles": {
-		"PythonRuff": {
-			"languages": {
-				"Python": {
-					"format_on_save": "on",
-					"language_servers": ["basedpyright", "ruff"],
-					"formatter": { "language_server": { "name": "ruff" } }
-				}
-			},
-			"lsp": {
-				"basedpyright": {
-					"settings": {
-						"basedpyright.analysis": { "typeCheckingMode": "off" }
-					}
-				},
-				"ruff": {
-					"initialization_options": {
-						"settings": {
-							"configuration": "pyproject.toml"
-						}
-					}
-				}
-			}
-		},
-		"PythonBlack": {
-			"languages": {
-				"Python": {
-					"format_on_save": "on",
-					"language_servers": ["basedpyright"],
-					"formatter": {
-						"external": {
-							"command": "sh",
-							"arguments": [
-								"-c",
-								"venv/bin/isort - --profile black | venv/bin/black -"
-							]
-						}
-					}
-				}
-			},
-			"lsp": {
-				"basedpyright": {
-					"settings": {
-						"basedpyright.analysis": { "typeCheckingMode": "off" }
-					}
-				}
-			}
-		}
-	},
-	"languages": {
-	  "Python": {
-			"language_servers": ["!basedpyright"]
-		},
-		"Go": {
-			"format_on_save": "on"
-		},
-		"JavaScript": {
-			"format_on_save": "on",
-			"language_servers": ["biome", "typescript-language-server"],
-			"formatter": { "language_server": { "name": "biome" } },
-			"code_actions_on_format": {
-				"source.fixAll.biome": true,
-				"source.organizeImports.biome": true
-			}
-		},
-		"TypeScript": {
-			"format_on_save": "on",
-			"language_servers": ["biome", "typescript-language-server"],
-			"formatter": { "language_server": { "name": "biome" } },
-			"code_actions_on_format": {
-				"source.fixAll.biome": true,
-				"source.organizeImports.biome": true
-			}
-		},
-		"JSX": {
-			"format_on_save": "on",
-			"language_servers": ["biome", "typescript-language-server"],
-			"formatter": { "language_server": { "name": "biome" } },
-			"code_actions_on_format": {
-				"source.fixAll.biome": true,
-				"source.organizeImports.biome": true
-			}
-		},
-		"TSX": {
-			"format_on_save": "on",
-			"language_servers": ["biome", "typescript-language-server"],
-			"formatter": { "language_server": { "name": "biome" } },
-			"code_actions_on_format": {
-				"source.fixAll.biome": true,
-				"source.organizeImports.biome": true
-			}
-		},
-		"JSON": {
-			"format_on_save": "on",
-			"language_servers": ["biome"],
-			"formatter": { "language_server": { "name": "biome" } }
-		},
-		"JSONC": {
-			"format_on_save": "on",
-			"language_servers": ["biome"],
-			"formatter": { "language_server": { "name": "biome" } }
-		},
-		"CSS": {
-			"format_on_save": "on",
-			"language_servers": ["biome"],
-			"formatter": { "language_server": { "name": "biome" } }
-		}
-	},
-	"lsp": {
-		"gopls": {
-			"initialization_options": {
-				"hints": {
-					"assignVariableTypes": true,
-					"compositeLiteralFields": true,
-					"compositeLiteralTypes": true,
-					"constantValues": true,
-					"functionTypeParameters": true,
-					"parameterNames": true,
-					"rangeVariableTypes": true
-				}
-			}
-		},
-		"biome": {
-			"settings": {
-				"require_config_file": true
-			}
-		},
-		"basedpyright": {
-			"settings": {
-				"basedpyright.analysis": { "typeCheckingMode": "off" }
-			}
-		}
-	}
+  "collaboration_panel": { "button": false },
+
+  "agent": {
+    "sidebar_side": "right",
+    "button": false,
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+
+  "cli_default_open_behavior": "new_window",
+  "vim_mode": false,
+  "cursor_shape": "block",
+
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 15,
+  "ui_font_size": 16,
+
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Min Dark (Solid)",
+  },
+
+  "icon_theme": {
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme",
+  },
+
+  "auto_install_extensions": {
+    "html": true,
+    "css": true,
+    "emmet": true,
+    "tailwindcss": true,
+    "toml": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "material-icon-theme": true,
+    "mcp-server-context7": true,
+    "python-requirements": true,
+    "jinja2": true,
+    "moonlight": true,
+    "git-firefly": true,
+    "just": true,
+    "biome": true,
+  },
+
+  "project_panel": { "dock": "left", "auto_fold_dirs": false },
+  "outline_panel": { "button": false, "dock": "right" },
+  "git_panel": { "dock": "left" },
+  "edit_predictions": { "provider": "none", "mode": "eager" },
+  "telemetry": { "diagnostics": false, "metrics": false },
+
+  // Configurações comuns a todos os projetos
+  "languages": {
+    "HTML": {
+      "format_on_save": "on",
+    },
+    "CSS": {
+      "format_on_save": "on",
+    },
+  },
+
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "tailwindCSS": {
+          "experimental": {
+            "classRegex": [
+              ["className\\s*=\\s*[\"'`]([^\"'`]*)[\"'`]"],
+              ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+              ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+            ],
+          },
+        },
+      },
+    },
+  },
+
+  "profiles": {
+    "Python — Ruff": {
+      "base": "user",
+      "settings": {
+        "languages": {
+          "Python": {
+            "language_servers": ["basedpyright", "ruff", "!pylsp", "!pyright"],
+
+            "format_on_save": "on",
+
+            "formatter": {
+              "language_server": {
+                "name": "ruff",
+              },
+            },
+
+            "code_actions_on_format": {
+              "source.fixAll.ruff": true,
+              "source.organizeImports.ruff": true,
+            },
+          },
+        },
+
+        "lsp": {
+          "ruff": {
+            "initialization_options": {
+              "settings": {},
+            },
+          },
+        },
+      },
+    },
+    "Python — Black + isort + Flake8": {
+      "base": "user",
+      "settings": {
+        "file_types": {
+          "Jinja2": ["**/templates/**/*.html", "**/*.jinja", "**/*.jinja2"],
+        },
+
+        "languages": {
+          "Python": {
+            "language_servers": ["basedpyright", "pylsp", "!ruff", "!pyright"],
+
+            "format_on_save": "on",
+
+            "formatter": [
+              {
+                "external": {
+                  "command": "isort",
+                  "arguments": ["--stdout", "--filename", "{buffer_path}", "-"],
+                },
+              },
+              {
+                "external": {
+                  "command": "black",
+                  "arguments": ["--stdin-filename", "{buffer_path}", "-"],
+                },
+              },
+            ],
+
+            "code_actions_on_format": {
+              "source.fixAll.ruff": false,
+              "source.organizeImports.ruff": false,
+            },
+          },
+
+          "Jinja2": {
+            "format_on_save": "on",
+
+            "formatter": {
+              "external": {
+                "command": "djlint",
+                "arguments": [
+                  "--reformat",
+                  "--quiet",
+                  "--profile",
+                  "django",
+                  "--stdin-filename",
+                  "{buffer_path}",
+                  "-",
+                ],
+              },
+            },
+          },
+        },
+
+        "lsp": {
+          "pylsp": {
+            "settings": {
+              "pylsp": {
+                "configurationSources": ["flake8"],
+
+                "plugins": {
+                  "flake8": {
+                    "enabled": true,
+                  },
+                  "pycodestyle": {
+                    "enabled": false,
+                  },
+                  "pyflakes": {
+                    "enabled": false,
+                  },
+                  "mccabe": {
+                    "enabled": false,
+                  },
+                  "autopep8": {
+                    "enabled": false,
+                  },
+                  "yapf": {
+                    "enabled": false,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    "Node — Biome": {
+      "base": "user",
+      "settings": {
+        "languages": {
+          "JavaScript": {
+            "language_servers": [
+              "typescript-language-server",
+              "biome",
+              "!eslint",
+            ],
+
+            "format_on_save": "on",
+
+            "formatter": {
+              "language_server": {
+                "name": "biome",
+              },
+            },
+
+            "code_actions_on_format": {
+              "source.fixAll.biome": true,
+              "source.organizeImports.biome": true,
+              "source.fixAll.eslint": false,
+            },
+          },
+
+          "TypeScript": {
+            "language_servers": [
+              "typescript-language-server",
+              "biome",
+              "!eslint",
+            ],
+
+            "format_on_save": "on",
+
+            "formatter": {
+              "language_server": {
+                "name": "biome",
+              },
+            },
+
+            "code_actions_on_format": {
+              "source.fixAll.biome": true,
+              "source.organizeImports.biome": true,
+              "source.fixAll.eslint": false,
+            },
+          },
+
+          "TSX": {
+            "language_servers": [
+              "typescript-language-server",
+              "biome",
+              "!eslint",
+            ],
+
+            "format_on_save": "on",
+
+            "formatter": {
+              "language_server": {
+                "name": "biome",
+              },
+            },
+
+            "code_actions_on_format": {
+              "source.fixAll.biome": true,
+              "source.organizeImports.biome": true,
+              "source.fixAll.eslint": false,
+            },
+          },
+
+          "JSON": {
+            "format_on_save": "on",
+
+            "formatter": {
+              "language_server": {
+                "name": "biome",
+              },
+            },
+          },
+
+          "JSONC": {
+            "format_on_save": "on",
+
+            "formatter": {
+              "language_server": {
+                "name": "biome",
+              },
+            },
+          },
+        },
+      },
+    },
+    "Node — Prettier + ESLint": {
+      "base": "user",
+      "settings": {
+        "languages": {
+          "JavaScript": {
+            "language_servers": [
+              "typescript-language-server",
+              "eslint",
+              "!biome",
+            ],
+
+            "format_on_save": "on",
+
+            "formatter": [
+              {
+                "code_action": "source.fixAll.eslint",
+              },
+              {
+                "external": {
+                  "command": "prettier",
+                  "arguments": ["--stdin-filepath", "{buffer_path}"],
+                },
+              },
+            ],
+
+            "code_actions_on_format": {
+              "source.fixAll.biome": false,
+              "source.organizeImports.biome": false,
+            },
+          },
+
+          "TypeScript": {
+            "language_servers": [
+              "typescript-language-server",
+              "eslint",
+              "!biome",
+            ],
+
+            "format_on_save": "on",
+
+            "formatter": [
+              {
+                "code_action": "source.fixAll.eslint",
+              },
+              {
+                "external": {
+                  "command": "prettier",
+                  "arguments": ["--stdin-filepath", "{buffer_path}"],
+                },
+              },
+            ],
+
+            "code_actions_on_format": {
+              "source.fixAll.biome": false,
+              "source.organizeImports.biome": false,
+            },
+          },
+
+          "TSX": {
+            "language_servers": [
+              "typescript-language-server",
+              "eslint",
+              "!biome",
+            ],
+
+            "format_on_save": "on",
+
+            "formatter": [
+              {
+                "code_action": "source.fixAll.eslint",
+              },
+              {
+                "external": {
+                  "command": "prettier",
+                  "arguments": ["--stdin-filepath", "{buffer_path}"],
+                },
+              },
+            ],
+
+            "code_actions_on_format": {
+              "source.fixAll.biome": false,
+              "source.organizeImports.biome": false,
+            },
+          },
+
+          "JSON": {
+            "format_on_save": "on",
+
+            "formatter": {
+              "external": {
+                "command": "prettier",
+                "arguments": ["--stdin-filepath", "{buffer_path}"],
+              },
+            },
+          },
+
+          "JSONC": {
+            "format_on_save": "on",
+
+            "formatter": {
+              "external": {
+                "command": "prettier",
+                "arguments": ["--stdin-filepath", "{buffer_path}"],
+              },
+            },
+          },
+        },
+
+        "lsp": {
+          "eslint": {
+            "settings": {
+              "workingDirectory": {
+                "mode": "auto",
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 }

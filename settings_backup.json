@@ -1,0 +1,159 @@
+{
+	"vim_mode": false,
+
+	"auto_install_extensions": {
+		"html": true,
+		"css": true,
+		"emmet": true,
+		"tailwindcss": true,
+		"toml": true,
+		"dockerfile": true,
+		"docker-compose": true,
+		"material-icon-theme": true,
+		"biome": true,
+		"mcp-server-context7": true,
+		"python-requirements": true,
+		"jinja2": true,
+		"moonlight": true,
+		"git-firefly": true,
+		"just": true
+	},
+
+	"edit_predictions": { "mode": "eager" },
+
+	"agent": {
+		"default_profile": "write",
+		"default_model": {
+			"provider": "copilot_chat",
+			"model": "claude-sonnet-4.5"
+		},
+		"model_parameters": []
+	},
+
+	"telemetry": {
+		"diagnostics": false,
+		"metrics": false
+	},
+
+	"features": {
+		"edit_prediction_provider": "copilot"
+	},
+
+	"buffer_font_family": "JetBrains Mono",
+	"cursor_shape": "block",
+	"ui_font_size": 16,
+	"buffer_font_size": 15,
+
+	"icon_theme": {
+		"mode": "dark",
+		"light": "Zed (Default)",
+		"dark": "Material Icon Theme"
+	},
+
+	"theme": {
+		"mode": "dark",
+		"light": "Ayu Light",
+		"dark": "Moonlight Italic"
+	},
+
+	"project_panel": { "auto_fold_dirs": false },
+
+	"languages": {
+		"Python": {
+			"language_servers": ["!basedpyright"]
+		},
+
+		"JavaScript": {
+			"format_on_save": "on",
+			"language_servers": [
+				"tailwindcss",
+				"biome",
+				"typescript-language-server"
+			],
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+
+		"TypeScript": {
+			"format_on_save": "on",
+			"language_servers": [
+				"tailwindcss",
+				"biome",
+				"typescript-language-server"
+			],
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+
+		"JSX": {
+			"format_on_save": "on",
+			"language_servers": [
+				"tailwindcss",
+				"emmet",
+				"biome",
+				"typescript-language-server"
+			],
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+
+		"TSX": {
+			"format_on_save": "on",
+			"language_servers": [
+				"tailwindcss",
+				"emmet",
+				"biome",
+				"typescript-language-server"
+			],
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+
+		"JSON": {
+			"format_on_save": "on",
+			"language_servers": ["biome"],
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+
+		"JSONC": {
+			"format_on_save": "on",
+			"language_servers": ["biome"],
+			"formatter": { "language_server": { "name": "biome" } }
+		}
+	},
+
+	"lsp": {
+		"tailwindcss": {
+			"settings": {
+				"tailwindCSS": {
+					"experimental": {
+						"classRegex": [
+							["className\\s*=\\s*[\"'`]([^\"'`]*)[\"'`]"],
+							["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+							["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"]
+						]
+					}
+				}
+			}
+		},
+
+		"emmet": {
+			"settings": {
+				"showExpandedAbbreviation": "always",
+				"showAbbreviationSuggestions": true,
+				"syntaxProfiles": {
+					"javascript": "jsx",
+					"typescript": "tsx"
+				}
+			}
+		},
+
+		"biome": {
+			"settings": {
+				"require_config_file": false
+			}
+		},
+
+		"basedpyright": {
+			"settings": {
+				"basedpyright.analysis": { "typeCheckingMode": "off" }
+			}
+		}
+	}
+}
