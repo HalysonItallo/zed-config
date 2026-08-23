@@ -24,8 +24,8 @@
 
   "icon_theme": {
     "mode": "dark",
-    "light": "Material Icon Theme",
-    "dark": "Material Icon Theme",
+    "light": "Material Icon Theme (NestJS)",
+    "dark": "Material Icon Theme (NestJS)",
   },
 
   "auto_install_extensions": {
@@ -374,6 +374,8 @@
           },
 
           "JSON": {
+            "language_servers": ["!biome", "..."],
+
             "format_on_save": "on",
 
             "formatter": {
@@ -385,6 +387,8 @@
           },
 
           "JSONC": {
+            "language_servers": ["!biome", "..."],
+
             "format_on_save": "on",
 
             "formatter": {
@@ -393,6 +397,16 @@
                 "arguments": ["--stdin-filepath", "{buffer_path}"],
               },
             },
+          },
+
+          "CSS": {
+            "language_servers": ["!biome", "..."],
+            "format_on_save": "on",
+          },
+
+          "HTML": {
+            "language_servers": ["!biome", "..."],
+            "format_on_save": "on",
           },
         },
 
