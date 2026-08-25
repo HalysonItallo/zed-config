@@ -1,6 +1,18 @@
 {
+  "ui_font_family": "Verdana",
+  "agent_ui_font_family": "Verdana",
+  "ui_font_weight": 500.0,
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_weight": 400.0
+  },
   "agent_servers": {
     "codex-acp": {
+      "default_config_options": {
+        "reasoning_effort": "xhigh",
+        "model": "gpt-5.6-terra",
+        "collaboration_mode": "plan"
+      },
       "type": "registry"
     }
   },
@@ -18,9 +30,9 @@
   "vim_mode": false,
   "cursor_shape": "block",
 
-  "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 15,
-  "ui_font_size": 16,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 14.0,
+  "ui_font_size": 15.0,
 
   "theme": {
     "mode": "dark",
@@ -29,9 +41,9 @@
   },
 
   "icon_theme": {
-    "mode": "dark",
-    "light": "Material Icon Theme (NestJS)",
-    "dark": "Material Icon Theme (NestJS)",
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme",
   },
 
   "auto_install_extensions": {
