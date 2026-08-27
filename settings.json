@@ -4,17 +4,17 @@
   "ui_font_weight": 500.0,
   "terminal": {
     "font_family": "JetBrains Mono",
-    "font_weight": 400.0
+    "font_weight": 400.0,
   },
   "agent_servers": {
     "codex-acp": {
       "default_config_options": {
         "reasoning_effort": "xhigh",
         "model": "gpt-5.6-terra",
-        "collaboration_mode": "plan"
+        "collaboration_mode": "plan",
       },
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "collaboration_panel": { "button": false },
 
@@ -24,7 +24,7 @@
     "button": true,
     "favorite_models": [],
     "model_parameters": [],
-    "terminal_init_command": "codex"
+    "terminal_init_command": "codex",
   },
 
   "cli_default_open_behavior": "new_window",
@@ -43,8 +43,8 @@
 
   "icon_theme": {
     "mode": "light",
-    "light": "Material Icon Theme",
-    "dark": "Material Icon Theme",
+    "light": "Material Icon Theme (NestJS)",
+    "dark": "Material Icon Theme (NestJS)",
   },
 
   "auto_install_extensions": {
@@ -72,37 +72,7 @@
   "telemetry": { "diagnostics": false, "metrics": false },
 
   // Configurações comuns a todos os projetos
-  "languages": {
-    "HTML": {
-      "format_on_save": "on",
-    },
-    "CSS": {
-      "format_on_save": "on",
-    },
-  },
-
-  "lsp": {
-    "basedpyright": {
-      "settings": {
-        "basedpyright.analysis": {
-          "typeCheckingMode": "off"
-        }
-      }
-    },
-    "tailwindcss-language-server": {
-      "settings": {
-        "tailwindCSS": {
-          "experimental": {
-            "classRegex": [
-              ["className\\s*=\\s*[\"'`]([^\"'`]*)[\"'`]"],
-              ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
-              ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
-            ],
-          },
-        },
-      },
-    },
-  },
+  "format_on_save": "on",
 
   "profiles": {
     "Python — Ruff": {
@@ -442,6 +412,30 @@
                 "mode": "auto",
               },
             },
+          },
+        },
+      },
+    },
+  },
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright": {
+          "analysis": {
+            "typeCheckingMode": "off",
+          },
+        },
+      },
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "tailwindCSS": {
+          "experimental": {
+            "classRegex": [
+              ["className\\s*=\\s*[\"'`]([^\"'`]*)[\"'`]"],
+              ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+              ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+            ],
           },
         },
       },
