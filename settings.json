@@ -1,9 +1,9 @@
 {
-  "ui_font_family": "Verdana",
-  "agent_ui_font_family": "Verdana",
+  "ui_font_family": ".SystemUIFont",
+  "agent_ui_font_family": ".SystemUIFont",
   "ui_font_weight": 500.0,
   "terminal": {
-    "font_family": "JetBrainsMono Nerd Font",
+    "font_family": "JetBrains Mono",
     "font_weight": 400.0
   },
   "agent_servers": {
@@ -19,8 +19,9 @@
   "collaboration_panel": { "button": false },
 
   "agent": {
+    "dock": "right",
     "sidebar_side": "right",
-    "button": false,
+    "button": true,
     "favorite_models": [],
     "model_parameters": [],
     "terminal_init_command": "codex"
@@ -30,14 +31,14 @@
   "vim_mode": false,
   "cursor_shape": "block",
 
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 14.0,
   "ui_font_size": 15.0,
 
   "theme": {
     "mode": "dark",
     "light": "Min Dark (Solid)",
-    "dark": "Min Dark (Solid)",
+    "dark": "Moonlight II Italic",
   },
 
   "icon_theme": {
@@ -81,6 +82,13 @@
   },
 
   "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "typeCheckingMode": "off"
+        }
+      }
+    },
     "tailwindcss-language-server": {
       "settings": {
         "tailwindCSS": {
@@ -138,7 +146,6 @@
         "languages": {
           "Python": {
             "language_servers": ["basedpyright", "pylsp", "!ruff", "!pyright"],
-
             "format_on_save": "on",
 
             "formatter": [
