@@ -11,7 +11,7 @@
       "default_config_options": {
         "reasoning_effort": "xhigh",
         "model": "gpt-5.6-luna",
-        "collaboration_mode": "default",
+        "collaboration_mode": "plan",
       },
       "type": "registry",
     },
@@ -44,8 +44,8 @@
 
   "icon_theme": {
     "mode": "light",
-    "light": "Material Icon Theme",
-    "dark": "Material Icon Theme",
+    "light": "Material Icon Theme (NestJS)",
+    "dark": "Material Icon Theme (NestJS)",
   },
 
   "auto_install_extensions": {
@@ -76,6 +76,15 @@
   "format_on_save": "on",
 
   "lsp": {
+    "vtsls": {
+        "settings": {
+          "typescript": {
+            "preferences": {
+              "preferTypeOnlyAutoImports": true
+            }
+          }
+        }
+    },
     "basedpyright": {
       "settings": {
         "basedpyright": {
@@ -88,18 +97,10 @@
       },
     },
     "tailwindcss-language-server": {
-      "settings": {
-        "tailwindCSS": {
-          "experimental": {
-            "classRegex": [
-              ["className\\s*=\\s*[\"'`]([^\"'`]*)[\"'`]"],
-              ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
-              ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
-            ],
-          },
-        },
-      },
-    },
+       "settings": {
+         "classFunctions": ["clsx", "cva"]
+       }
+     },
   },
 
   "profiles": {
@@ -230,9 +231,10 @@
         "languages": {
           "JavaScript": {
             "language_servers": [
-              "typescript-language-server",
+              "vtsls",
               "biome",
               "!eslint",
+              "!typescript-language-server",
             ],
 
             "format_on_save": "on",
@@ -252,9 +254,10 @@
 
           "TypeScript": {
             "language_servers": [
-              "typescript-language-server",
+              "vtsls",
               "biome",
               "!eslint",
+              "!typescript-language-server",
             ],
 
             "format_on_save": "on",
@@ -274,9 +277,10 @@
 
           "TSX": {
             "language_servers": [
-              "typescript-language-server",
+              "vtsls",
               "biome",
               "!eslint",
+              "!typescript-language-server",
             ],
 
             "format_on_save": "on",
@@ -322,20 +326,24 @@
         "languages": {
           "JavaScript": {
             "language_servers": [
-              "typescript-language-server",
+              "vtsls",
               "eslint",
               "!biome",
+              "!typescript-language-server",
             ],
 
             "format_on_save": "on",
 
             "formatter": [
               {
+                "code_action": "source.organizeImports"
+              },
+              {
                 "code_action": "source.fixAll.eslint",
               },
               {
                 "external": {
-                  "command": "prettier",
+                  "command": "./node_modules/.bin/prettier",
                   "arguments": ["--stdin-filepath", "{buffer_path}"],
                 },
               },
@@ -349,20 +357,24 @@
 
           "TypeScript": {
             "language_servers": [
-              "typescript-language-server",
+              "vtsls",
               "eslint",
               "!biome",
+              "!typescript-language-server",
             ],
 
             "format_on_save": "on",
 
             "formatter": [
               {
+                "code_action": "source.organizeImports"
+              },
+              {
                 "code_action": "source.fixAll.eslint",
               },
               {
                 "external": {
-                  "command": "prettier",
+                  "command": "./node_modules/.bin/prettier",
                   "arguments": ["--stdin-filepath", "{buffer_path}"],
                 },
               },
@@ -376,9 +388,10 @@
 
           "TSX": {
             "language_servers": [
-              "typescript-language-server",
+              "vtsls",
               "eslint",
               "!biome",
+              "!typescript-language-server",
             ],
 
             "format_on_save": "on",
@@ -389,7 +402,7 @@
               },
               {
                 "external": {
-                  "command": "prettier",
+                  "command": "./node_modules/.bin/prettier",
                   "arguments": ["--stdin-filepath", "{buffer_path}"],
                 },
               },
@@ -408,7 +421,7 @@
 
             "formatter": {
               "external": {
-                "command": "prettier",
+                "command": "./node_modules/.bin/prettier",
                 "arguments": ["--stdin-filepath", "{buffer_path}"],
               },
             },
@@ -421,7 +434,7 @@
 
             "formatter": {
               "external": {
-                "command": "prettier",
+                "command": "./node_modules/.bin/prettier",
                 "arguments": ["--stdin-filepath", "{buffer_path}"],
               },
             },
